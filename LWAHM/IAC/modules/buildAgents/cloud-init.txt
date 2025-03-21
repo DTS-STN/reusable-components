@@ -1,0 +1,22 @@
+#cloud-config
+bootcmd: 
+  - "curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash"
+  - [cloud-init-per, once]
+package_reboot_if_required: true
+package_update: true
+package_upgrade: true
+groups: 
+  - docker: [docker, AzDevOps]
+system_info:
+  default_user:
+    name: ubuntu
+    groups: [docker, sudo]
+packages:
+  - httpd
+  - docker.io
+  - azure-cli
+  - apt-transport-https 
+  - ca-certificates
+  - curl
+  - gnupg
+  - lsb-release
