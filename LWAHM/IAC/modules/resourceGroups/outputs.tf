@@ -1,22 +1,17 @@
 output "networking_rg_id" {
   value       = azurerm_resource_group.networking_rg.id
-  description = "DTS Dev Networking RG ID "
 }
 output "networking_rg_name" {
   value       = azurerm_resource_group.networking_rg.name
-  description = "DTS Dev Networking RG Name "
 }
 output "dns_rg" {
   value       = azurerm_resource_group.dns_rg.name
-  description = "DTS DNS DEV RG NAME"
 }
 output "agw_shared_rg_id" {
   value       = azurerm_resource_group.agw_shared_rg.id
-  description = "DTS APPGW DEV RG ID" 
 }
 output "agw_shared_rg_name" {
   value       = azurerm_resource_group.agw_shared_rg.name
-  description = "DTS APPGW DEV RG NAME"
 }
 output "log_rg_name" {
   value = azurerm_resource_group.log_rg.name
