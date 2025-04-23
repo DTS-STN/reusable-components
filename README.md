@@ -32,15 +32,15 @@ and configuration.
 This section lists reusable code libraries available within this repository,
 primarily found under the `libs/` directory.
 
-| Package                              | Description                                               |
-| ------------------------------------ | --------------------------------------------------------- |
-| [health-checks](libs/health-checks)  | Simple server-side health checks in a NodeJS application. |
+| Package                                        | Description                                               |
+| ---------------------------------------------- | --------------------------------------------------------- |
+| [health-checks](libs/javascript/health-checks) | Simple server-side health checks in a NodeJS application. |
 
 ## Licenses
 
 Unless specified differently within a specific directory or package, all content
 within this repository is licensed under the [MIT license](LICENSE).
 
-| Package                             | License                                                    |
-| ------------------------------------| ---------------------------------------------------------- |
-| [health-checks](libs/health-checks) | [MIT](libs/health-checks/LICENSE.md)                       |
+| Package                                        | License                                                   |
+| ---------------------------------------------- | --------------------------------------------------------- |
+| [health-checks](libs/javascript/health-checks) | [MIT](libs/javascript/health-checks/LICENSE.md)           |
