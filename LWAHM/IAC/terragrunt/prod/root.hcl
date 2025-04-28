@@ -1,10 +1,10 @@
 locals {
-  varfile = "lwhp-dev.json"
+  varfile = "lwahm-prod.json"
   vardata = jsondecode(file(local.varfile))
 }
 
 inputs =  merge(jsondecode(
-    file("${find_in_parent_folders("lwhp-dev.json", local.varfile)}"),
+    file("${find_in_parent_folders("lwahm-prod.json", local.varfile)}"),
   ))
 
 generate "provider" {
@@ -16,12 +16,8 @@ provider "azurerm" {
     tenant_id = var.tenant_id
     client_id = var.client_id
     client_secret = var.client_secret
+    features {}
     resource_provider_registrations = "none"
-    features {
-      resource_group {
-        prevent_deletion_if_contains_resources = false
-      }
-    }
 }
 terraform {
   backend "azurerm" {}
