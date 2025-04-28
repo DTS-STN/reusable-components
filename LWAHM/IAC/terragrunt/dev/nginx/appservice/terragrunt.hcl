@@ -1,5 +1,5 @@
 include {
-  path = find_in_parent_folders()
+  path = find_in_parent_folders("root.hcl")
 }
 
 dependency "resourceGroups" {
@@ -17,16 +17,10 @@ dependency "acr" {
 dependency "appInsights" {
   config_path = "../..//appInsights"
 }
-
-dependency "dns" {
-  config_path = "../..//dns"
-}
-
 dependency "network" {
   config_path = "../..//network"
 
 }
-
 dependency "privateDns" {
   config_path = "../..//privateDns"
 }
@@ -56,9 +50,6 @@ inputs = {
     kv_id = dependency.storage.outputs.kv_id
     log_workspace_id = dependency.logAnalytics.outputs.log_workspace_id
     kv_uri = dependency.storage.outputs.kv_uri
-    dns_name = dependency.dns.outputs.dns_name
-    dns_rg = dependency.resourceGroups.outputs.dns_rg
-    dns_id = dependency.dns.outputs.dns_id
     snet_pep_lwhp_id = dependency.network.outputs.snet_pep_lwhp_id
     acr_id =  dependency.acr.outputs.acr_id
     email_receiver = [

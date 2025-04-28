@@ -1,5 +1,5 @@
 include {
-  path = find_in_parent_folders()
+  path = find_in_parent_folders("root.hcl")
 }
 
 dependency "resourceGroups" {
@@ -16,10 +16,6 @@ dependency "logAnalytics" {
 
 dependency "acr" {
   config_path = "../..//acr"
-}
-
-dependency "dns" {
-  config_path = "../..//dns"
 }
 
 dependency "network" {
@@ -54,9 +50,6 @@ inputs = {
     kv_id = dependency.storage.outputs.kv_id
     log_workspace_id = dependency.logAnalytics.outputs.log_workspace_id
     kv_uri = dependency.storage.outputs.kv_uri
-    dns_name = dependency.dns.outputs.dns_name
-    dns_rg = dependency.resourceGroups.outputs.dns_rg
-    dns_id = dependency.dns.outputs.dns_id
     snet_pep_lwhp_id = dependency.network.outputs.snet_pep_lwhp_id
     snet_app_service_id = dependency.network.outputs.snet_app_service_id
     acr_id =  dependency.acr.outputs.acr_id

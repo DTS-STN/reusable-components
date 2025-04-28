@@ -1,5 +1,5 @@
 include {
-  path = find_in_parent_folders()
+  path = find_in_parent_folders("root.hcl")
 }
 
 dependency "resourceGroups" {
@@ -16,10 +16,6 @@ dependency "logAnalytics" {
 
 dependency "network" {
   config_path = "..//network" #**NOTE: double slash // is intended **
-}
-
-dependency "dns" {
-  config_path = "..//dns" #**NOTE: double slash // is intended **
 }
 
 dependency "nginx" {
