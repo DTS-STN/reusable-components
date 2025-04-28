@@ -34,15 +34,6 @@ variable "kv_uri" {
 variable "kv_id" {
   type = string
 }
-variable "dns_rg" {
-  type = string
-}
-variable "dns_id" {
-  type = string
-}
-variable "dns_name" {
-  type = string
-}
 variable "private_dns_rg" {
   type = string
 }
@@ -91,4 +82,7 @@ variable email_receiver {
     name = string,
     email = string 
   }))
+}
+variable "hosting_model" {
+  type = string
 }
