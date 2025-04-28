@@ -4,9 +4,6 @@ output "networking_rg_id" {
 output "networking_rg_name" {
   value       = azurerm_resource_group.networking_rg.name
 }
-output "dns_rg" {
-  value       = azurerm_resource_group.dns_rg.name
-}
 output "agw_shared_rg_id" {
   value       = azurerm_resource_group.agw_shared_rg.id
 }
