@@ -18,10 +18,6 @@ dependency "network" {
   config_path = "..//network" #**NOTE: double slash // is intended **
 }
 
-dependency "dns" {
-  config_path = "..//dns" #**NOTE: double slash // is intended **
-}
-
 dependency "nginx" {
   config_path = "../nginx/appservice" #**NOTE: double slash // is intended **
 }
