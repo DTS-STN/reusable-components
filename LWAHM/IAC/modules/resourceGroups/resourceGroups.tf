@@ -10,10 +10,6 @@ resource "azurerm_resource_group" "private_dns_rg" {
   name = "rg-${var.hosting_model}-private-dns-${var.environment}"
   location = var.location
 }
-resource "azurerm_resource_group" "depot_rg" {
-  name = "rg-${var.hosting_model}-depot-${var.environment}"
-  location = var.location
-}
 resource "azurerm_resource_group" "acr_rg" {
   name = "rg-${var.hosting_model}-acr-${var.environment}"
   location = var.location

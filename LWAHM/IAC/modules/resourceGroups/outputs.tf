@@ -19,9 +19,6 @@ output "log_rg_id" {
 output "private_dns_rg" {
   value = azurerm_resource_group.private_dns_rg.name
 }
-output "depot_rg_name" {
-  value = azurerm_resource_group.depot_rg.name
-}
 output "acr_rg_name" {
   value = azurerm_resource_group.acr_rg.name
 }
