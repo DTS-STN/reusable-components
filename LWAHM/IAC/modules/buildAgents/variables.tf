@@ -31,3 +31,6 @@ variable "build_agents_admin_pass" {
 variable "privatelink_dns_id" {
     type = string
 }
+variable "platform" {
+    type = string
+}

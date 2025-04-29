@@ -17,12 +17,12 @@ variable "client_secret" {
 variable "private_dns_rg" {
   type = string
 }
-variable "lwhp_vnet_id" {
+variable "platform_vnet_id" {
   type = string
 }
 variable "esdc_hub_peered_vnet_id" {
   type = string
 }
-variable "hosting_model" {
+variable "platform" {
     type = string
 }

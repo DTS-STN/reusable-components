@@ -1,5 +1,5 @@
 include {
-  path = find_in_parent_folders()
+  path = find_in_parent_folders("root.hcl")
 }
 
 dependency "resourceGroups" {
@@ -20,6 +20,6 @@ terraform {
 
 inputs = {
     private_dns_rg = dependency.resourceGroups.outputs.private_dns_rg
-    lwhp_vnet_id = dependency.network.outputs.lwhp_vnet_id
+    platform_vnet_id = dependency.network.outputs.platform_vnet_id
     esdc_hub_peered_vnet_id = dependency.network.outputs.esdc_hub_peered_vnet_id
 }

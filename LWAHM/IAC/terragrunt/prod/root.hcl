@@ -16,8 +16,12 @@ provider "azurerm" {
     tenant_id = var.tenant_id
     client_id = var.client_id
     client_secret = var.client_secret
-    features {}
     resource_provider_registrations = "none"
+    features {
+      resource_group {
+        prevent_deletion_if_contains_resources = false
+      }
+    }
 }
 terraform {
   backend "azurerm" {}

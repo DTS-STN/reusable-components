@@ -1,5 +1,5 @@
 resource "azurerm_network_security_group" "nsg" {
-  name                = "nsg-lwhp-${var.environment}"
+  name                = "nsg-${var.platform}-${var.environment}"
   location            = var.location
   resource_group_name = var.networking_rg_name
 }

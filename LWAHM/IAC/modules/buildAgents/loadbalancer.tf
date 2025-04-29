@@ -1,5 +1,5 @@
 resource "azurerm_lb" "build_agents_lb" {
-  name                = "lwhp-lb-build-agents-${var.environment}"
+  name                = "lb-build-agents-${var.platform}-${var.environment}"
   location            = var.location
   resource_group_name = var.build_agents_rg_name
 
@@ -13,12 +13,12 @@ resource "azurerm_lb" "build_agents_lb" {
 
 resource "azurerm_lb_backend_address_pool" "build_agents_backend_address_pool" {
     loadbalancer_id = azurerm_lb.build_agents_lb.id
-    name = "build-agents-backend-pool"
+    name = "beap-build-agents-${var.environment}"
     
 }
 
 resource "azurerm_lb_rule" "LB_rule" {
-  name = "build-agents-lb-rule"
+  name = "lb-rule-build-agents-${var.environment}"
   frontend_port = 80
   frontend_ip_configuration_name = "feip-build-agents-${var.environment}"
   protocol = "Tcp"
@@ -30,7 +30,7 @@ resource "azurerm_lb_rule" "LB_rule" {
 resource "azurerm_lb_nat_pool" "build_agents_nat_pool" {
   resource_group_name            = var.build_agents_rg_name
   loadbalancer_id                = azurerm_lb.build_agents_lb.id
-  name                           = "build-agents-nat-pool"
+  name                           = "nat-pool-build-agents-${var.environment}"
   protocol                       = "Tcp"
   frontend_port_start            = 500
   frontend_port_end              = 503
@@ -40,6 +40,6 @@ resource "azurerm_lb_nat_pool" "build_agents_nat_pool" {
 
 resource "azurerm_lb_probe" "build_agents_health_probe" {
   loadbalancer_id = azurerm_lb.build_agents_lb.id
-  name            = "build-agents-probe"
+  name            = "probe-build-agents-${var.environment}"
   port            = 80
 }

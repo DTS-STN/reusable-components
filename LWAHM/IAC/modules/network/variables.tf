@@ -40,6 +40,6 @@ variable "gateway_capacity" {
     type = number
     default = 1
 }
-variable "hosting_model" {
+variable "platform" {
     type = string
 }

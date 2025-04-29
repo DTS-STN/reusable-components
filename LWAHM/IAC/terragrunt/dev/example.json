@@ -1,0 +1,21 @@
+{
+    "subscription_id": "changeme",
+    "tenant_id": "changeme",
+    "client_id": "changeme",
+    "client_secret": "changeme",
+    "tf_resource_group_name": "changeme",
+    "tf_storage_account_name": "changeme",
+    "remote_state_container_name": "changeme",
+    "location": "canadacentral",
+    "platform": "changeme",
+    "environment": "changeme",
+    "environment_domain_name": "changme",
+    "base_domain": "changeme",
+    "next_hop_ip": "changeme",
+    "appgw_private_ip": "changeme",
+    "appgw_vnet_address_space": "changeme",
+    "wildcard_ssl_certificate":"changeme",
+    "wildcard_ssl_certificate_password": "changeme",
+    "build_agents_admin_pass": "changeme",
+    "sced_ip": "changeme"
+}

@@ -9,11 +9,11 @@ resource "azurerm_monitor_action_group" "ag_appservice" {
   resource_group_name = azurerm_resource_group.appservice_rg.name
   short_name          = "ag-${var.application_name}"
 
-  dynamic "email_receiver" {
-    for_each = var.email_receiver
+  dynamic "email_receivers" {
+    for_each = var.email_receivers
     content {
-      name          = "Send to ${email_receiver.value.name}"
-      email_address = email_receiver.value.email
+      name          = "Send to ${email_receivers.value.name}"
+      email_address = email_receivers.value.email
     }
   }
 }
@@ -57,7 +57,7 @@ resource "azurerm_monitor_metric_alert" "alert_rule_errors" {
 resource "azurerm_monitor_metric_alert" "alert_rule_cpu_saturation" {
   name                = "cpu-saturation-alert"
   resource_group_name = azurerm_resource_group.appservice_rg.name
-  scopes              = [azurerm_service_plan.app_service_plan.id]
+  scopes              = [azurerm_service_plan.appservice_plan.id]
   description         = "AVG CPU Saturation has reached or exceeeded ${local.cpu_threshold}%, investigate below."
   criteria {
     metric_namespace = "Microsoft.Web/serverfarms"
@@ -74,7 +74,7 @@ resource "azurerm_monitor_metric_alert" "alert_rule_cpu_saturation" {
 resource "azurerm_monitor_metric_alert" "alert_rule_memory_saturation" {
   name                = "memory-saturation-alert"
   resource_group_name = azurerm_resource_group.appservice_rg.name
-  scopes              = [azurerm_service_plan.app_service_plan.id]
+  scopes              = [azurerm_service_plan.appservice_plan.id]
   description         = "AVG Memory Saturation has reached or exceeeded ${local.memory_threshold}%, investigate below."
   criteria {
     metric_namespace = "Microsoft.Web/serverfarms"
