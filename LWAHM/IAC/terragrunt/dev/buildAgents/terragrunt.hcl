@@ -1,5 +1,5 @@
 include {
-  path = find_in_parent_folders()
+  path = find_in_parent_folders("root.hcl")
 }
 
 dependency "resourceGroups" {
@@ -26,5 +26,4 @@ inputs  = {
   build_agents_rg_name = dependency.resourceGroups.outputs.build_agents_rg_name
   snet_build_agents_id = dependency.network.outputs.snet_build_agents_id
   privatelink_dns_id = dependency.privateDns.outputs.privatelink_dns_id
-  lwhp_vnet_id = dependency.network.outputs.lwhp_vnet_id
 }

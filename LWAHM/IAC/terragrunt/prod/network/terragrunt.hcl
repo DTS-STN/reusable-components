@@ -1,5 +1,5 @@
 include {
-  path = find_in_parent_folders()
+  path = find_in_parent_folders("root.hcl")
 }
 
 locals {
@@ -16,5 +16,5 @@ terraform {
 
 inputs = {
     networking_rg_name = dependency.resourceGroups.outputs.networking_rg_name
-    networking_rg_id = dependency.resourceGroups.outputs.networking_rg_id
+    appgw_vnet_address_space = "10.0.0.0/16"
 }

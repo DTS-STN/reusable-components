@@ -24,3 +24,6 @@ variable "log_rg_name" {
 variable "retention_days" {
   type = number
 }
+variable "platform" {
+    type = string
+}

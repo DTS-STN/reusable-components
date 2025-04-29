@@ -1,16 +1,16 @@
 locals {
   frontend_private_ip_configuration_name = "frontend_private_ip_configuration"
-  ssl_certificate_name                   = "certificate-bsim-sagi-dev"
+  ssl_certificate_name                   = "cert-${var.platform}-${var.environment}"
 }
 resource "azurerm_user_assigned_identity" "appGatewayIdentity" {
-  resource_group_name = var.agw_shared_rg_name
+  resource_group_name = var.agw_rg_name
   location            = var.location
-  name                = "id-appgw-lwhp-${var.environment}"
+  name                = "id-appgw-${var.platform}-${var.environment}"
 }
 
 resource "azurerm_application_gateway" "application_gw" {
-  name                = "agw-lwhp-${var.environment}"
-  resource_group_name = var.agw_shared_rg_name
+  name                = "agw-${var.platform}-${var.environment}"
+  resource_group_name = var.agw_rg_name
   location            = var.location
 
   sku {
@@ -109,9 +109,9 @@ resource "azurerm_application_gateway" "application_gw" {
 }
 
 resource "azurerm_monitor_diagnostic_setting" "agw_diagnostic_settings" {
-  name                       = "agw-diagnostic-settings"
+  name                       = "agw-diag-${var.platform}-${var.environment}"
   target_resource_id         = azurerm_application_gateway.application_gw.id
-  log_analytics_workspace_id = var.log_workspace_id
+  log_analytics_workspace_id = var.law_id
   enabled_log {
     category_group = "AllLogs"
   }

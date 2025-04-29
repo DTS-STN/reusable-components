@@ -1,5 +1,5 @@
 resource "azurerm_linux_virtual_machine_scale_set" "build_agents_vmss" {
-  name                = "lwhp-build-agents-vmss-${var.environment}"
+  name                = "build-agents-vmss-${var.platform}-${var.environment}"
   resource_group_name = var.build_agents_rg_name
   location            = var.location
   sku                 = "Standard_DS1_v2"
@@ -32,7 +32,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "build_agents_vmss" {
 
   }
   network_interface {
-    name    = "lwhp-build-agents-nic"
+    name    = "nic-build-agents-${var.platform}-${var.environment}"
     primary = true
 
     ip_configuration {
@@ -42,7 +42,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "build_agents_vmss" {
       subnet_id = var.snet_build_agents_id
       load_balancer_inbound_nat_rules_ids = [azurerm_lb_nat_pool.build_agents_nat_pool.id]
       public_ip_address {
-        name = "lwhp-build-agents-PIP"
+        name = "PIP-build-agents-${var.platform}-${var.environment}"
         domain_name_label = "build-agent"
       }
     }

@@ -45,7 +45,7 @@ variable "appgw_log_retention_days" {
   type    = string
   default = 30
 }
-variable "agw_shared_rg_name" {
+variable "agw_rg_name" {
   type    = string
   default = ""
 }
@@ -133,6 +133,9 @@ variable "wildcard_ssl_certificate" {
 variable "wildcard_ssl_certificate_password" {
   type = string
 }
-variable "log_workspace_id" {
+variable "law_id" {
+  type = string
+}
+variable "platform"{
   type = string
 }

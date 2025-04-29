@@ -1,13 +1,9 @@
 include {
-  path = find_in_parent_folders()
+  path = find_in_parent_folders("root.hcl")
 }
 
 dependency "resourceGroups" {
   config_path = "../..//resourceGroups" #**NOTE: double slash // is intended **
-}
-
-dependency "storage" {
-  config_path = "../..//storage" #**NOTE: double slash // is intended **
 }
 
 dependency "acr" {
@@ -17,16 +13,10 @@ dependency "acr" {
 dependency "appInsights" {
   config_path = "../..//appInsights"
 }
-
-dependency "dns" {
-  config_path = "../..//dns"
-}
-
 dependency "network" {
   config_path = "../..//network"
 
 }
-
 dependency "privateDns" {
   config_path = "../..//privateDns"
 }
@@ -52,23 +42,15 @@ inputs = {
     private_dns_rg = dependency.resourceGroups.outputs.private_dns_rg
     privatelink_dns_name = dependency.privateDns.outputs.privatelink_dns_name
     privatelink_dns_id = dependency.privateDns.outputs.privatelink_dns_id
-    lwhp_vnet_name = dependency.network.outputs.lwhp_vnet_name
     kv_id = dependency.storage.outputs.kv_id
-    log_workspace_id = dependency.logAnalytics.outputs.log_workspace_id
+    law_id = dependency.logAnalytics.outputs.law_id
     kv_uri = dependency.storage.outputs.kv_uri
-    dns_name = dependency.dns.outputs.dns_name
-    dns_rg = dependency.resourceGroups.outputs.dns_rg
-    dns_id = dependency.dns.outputs.dns_id
-    snet_pep_lwhp_id = dependency.network.outputs.snet_pep_lwhp_id
+    snet_peps_id = dependency.network.outputs.snet_peps_id
     acr_id =  dependency.acr.outputs.acr_id
-    email_receiver = [
+    email_receivers = [
       {
-        name = "Marcus Blais",
-        email = "marcus.blais@hrsdc-rhdcc.gc.ca"
+        name = "",
+        email = ""
       },
-      {
-        name = "Adam Andrews",
-        email = "adam.andrews@hrsdc-rhdcc.gc.ca"
-      }
     ]
 }

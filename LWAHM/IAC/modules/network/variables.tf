@@ -40,3 +40,6 @@ variable "gateway_capacity" {
     type = number
     default = 1
 }
+variable "platform" {
+    type = string
+}
