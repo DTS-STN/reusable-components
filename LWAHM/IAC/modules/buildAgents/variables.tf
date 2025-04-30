@@ -28,9 +28,6 @@ variable "build_agents_rg_name" {
 variable "build_agents_admin_pass" {
     type = string
 }
-variable "privatelink_dns_id" {
-    type = string
-}
 variable "platform" {
     type = string
 }

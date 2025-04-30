@@ -4,8 +4,8 @@ output "networking_rg_name" {
 output "agw_rg_name" {
   value       = azurerm_resource_group.agw_rg.name
 }
-output "log_rg_name" {
-  value = azurerm_resource_group.log_rg.name
+output "logs_rg_name" {
+  value = azurerm_resource_group.logs_rg.name
 }
 output "private_dns_rg" {
   value = azurerm_resource_group.private_dns_rg.name

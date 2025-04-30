@@ -17,7 +17,7 @@ resource "azurerm_private_endpoint" "acr_pep" {
     subresource_names              = ["registry"]
   }
   private_dns_zone_group {
-    name                 = "privatelink.azurewebsites.net"
+    name                 = var.privatelink_dns_name
     private_dns_zone_ids = [var.privatelink_dns_id]
   }
 }
