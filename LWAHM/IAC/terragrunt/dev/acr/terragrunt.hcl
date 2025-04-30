@@ -29,6 +29,7 @@ terraform {
 inputs = {
     acr_rg_name = dependency.resourceGroups.outputs.acr_rg_name
     privatelink_dns_id = dependency.privateDns.outputs.privatelink_dns_id
+    privatelink_dns_name = dependency.privateDns.outputs.privatelink_dns_name
     snet_peps_id = dependency.network.outputs.snet_peps_id
     law_id = dependency.logAnalytics.outputs.law_id
 }

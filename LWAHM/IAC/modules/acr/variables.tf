@@ -13,6 +13,9 @@ variable "snet_peps_id" {
 variable "privatelink_dns_id" {
   type = string
 }
+variable "privatelink_dns_name" {
+  type = string
+}
 variable "subscription_id" {
   type = string
 }

@@ -43,7 +43,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "build_agents_vmss" {
       load_balancer_inbound_nat_rules_ids = [azurerm_lb_nat_pool.build_agents_nat_pool.id]
       public_ip_address {
         name = "PIP-build-agents-${var.platform}-${var.environment}"
-        domain_name_label = "build-agent"
+        domain_name_label = "${var.platform}-build-agent-${var.environment}"
       }
     }
   }

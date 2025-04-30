@@ -10,7 +10,7 @@ resource "azurerm_private_endpoint" "appservice_pep" {
     subresource_names              = ["sites"]
   }
   private_dns_zone_group {
-    name                 = "privatelink.azurewebsites.net"
+    name                 = var.privatelink_dns_name
     private_dns_zone_ids = [var.privatelink_dns_id]
   }
 }

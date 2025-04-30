@@ -4,7 +4,6 @@ variable "environment" {
 }
 variable "location" {
   type    = string
-  default = "Canada Central"
 }
 variable "subscription_id" {
   type = string
@@ -18,7 +17,7 @@ variable "client_id" {
 variable "client_secret" {
   type = string
 }
-variable "log_rg_name" {
+variable "logs_rg_name" {
   type = string
 }
 variable "retention_days" {

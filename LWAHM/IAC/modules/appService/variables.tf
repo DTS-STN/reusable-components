@@ -4,11 +4,9 @@ variable "environment" {
 }
 variable "location" {
   type    = string
-  default = "Canada Central"
 }
 variable "base_domain" {
   type    = string
-  default = ""
 }
 variable "subscription_id" {
   type = string
@@ -55,20 +53,13 @@ variable "snet_app_service_id" {
 variable "law_id" {
   type = string
 }
-variable "acr_admin_password" {
-  type = string
-}
 variable "image_name" {
   type = string
 }
 variable "image_tag" {
   type = string
-  default = "latest"
 }
 variable "int_image_tag" {
-  type = string
-}
-variable "uat_image_tag" {
   type = string
 }
 variable "acr_id" {

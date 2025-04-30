@@ -9,11 +9,11 @@ resource "azurerm_monitor_action_group" "ag_appservice" {
   resource_group_name = azurerm_resource_group.appservice_rg.name
   short_name          = "ag-${var.application_name}"
 
-  dynamic "email_receivers" {
+  dynamic "email_receiver" {
     for_each = var.email_receivers
     content {
-      name          = "Send to ${email_receivers.value.name}"
-      email_address = email_receivers.value.email
+      name          = "Send to ${email_receiver.value.name}"
+      email_address = email_receiver.value.email
     }
   }
 }
