@@ -1,0 +1,34 @@
+{
+  "name": "@dts-stn/invariant",
+  "version": "0.0.1",
+  "description": "An invariant function",
+  "keywords": [
+    "invariant",
+    "error",
+    "assert",
+    "asserts"
+  ],
+  "homepage": "https://github.com/DTS-STN/reusable-components#readme",
+  "bugs": {
+    "url": "https://github.com/DTS-STN/reusable-components"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DTS-STN/reusable-components",
+    "directory": "libs/javascript/invariant"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Digital Technology Solutions",
+    "url": "https://github.com/DTS-STN"
+  },
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
