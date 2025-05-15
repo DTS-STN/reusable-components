@@ -41,9 +41,7 @@ describe('message behaviour', () => {
 describe('throw behaviour', () => {
   it('should not throw if condition is truthy', () => {
     const truthy: unknown[] = [1, -1, true, {}, [], Symbol(), 'hi'];
-    truthy.forEach((value: unknown) =>
-      expect(() => invariant(value)).not.toThrow()
-    );
+    truthy.forEach((value: unknown) => expect(() => invariant(value)).not.toThrow());
   });
 
   it('should throw if the condition is falsy', () => {
