@@ -32,8 +32,8 @@
     "fix": "run-p --continue-on-error fix:*",
     "fix:eslint": "npm run lint:eslint -- --fix",
     "fix:prettier": "npm run lint:prettier -- --write",
-    "test": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test": "vitest run",
+    "test:coverage": "npm run test -- --coverage"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.9",
