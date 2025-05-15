@@ -4,8 +4,13 @@ import tseslint from 'typescript-eslint';
 import unicorneslint from 'eslint-plugin-unicorn';
 import vitest from '@vitest/eslint-plugin';
 import { defineConfig } from 'eslint/config';
+import { includeIgnoreFile } from '@eslint/compat';
+import { fileURLToPath } from 'node:url';
+
+const gitignorePath = fileURLToPath(new URL('.gitignore', import.meta.url));
 
 export default defineConfig([
+  includeIgnoreFile(gitignorePath),
   {
     files: ['**/*.{js,mjs,cjs,ts}'],
     plugins: { js },
