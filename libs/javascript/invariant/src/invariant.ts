@@ -1,4 +1,4 @@
-const prefix: string = 'Invariant failed';
+const prefix = 'Invariant failed';
 
 /**
  * `invariant` is used to [assert](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#assertion-functions) that the `condition` is [truthy](https://github.com/getify/You-Dont-Know-JS/blob/bdbe570600d4e1107d0b131787903ca1c9ec8140/up%20%26%20going/ch2.md#truthy--falsy).
@@ -14,7 +14,7 @@ const prefix: string = 'Invariant failed';
  * ```
  */
 export function invariant(
-  condition: any,
+  condition: unknown,
   // Not providing an inline default argument for message as the result is smaller
   /**
    * Can provide a string, or a function that returns a string for cases where

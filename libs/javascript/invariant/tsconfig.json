@@ -16,6 +16,9 @@
     "strict": true,
     "target": "ES6",
     "useUnknownInCatchVariables": true,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "exactOptionalPropertyTypes": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "skipLibCheck": true
   }
 }

@@ -4,6 +4,12 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   plugins: [tsconfigPaths()],
   test: {
-    include: ['./test/**/*.test.ts'],
+    name: 'invariant',
+    typecheck: {
+      enabled: true,
+    },
+    coverage: {
+      include: ['src/**'],
+    },
   },
 });
