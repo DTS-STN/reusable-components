@@ -10,14 +10,14 @@ patterns across various projects within the organization.
 
 ## Repository structure
 
-The repository is *mainly* organized into the following top-level directories:
+The repository is _mainly_ organized into the following top-level directories:
 
-* **`apps/`**: standalone applications that are built and deployed
+- **`apps/`**: standalone applications that are built and deployed
   independently, but might be reusable or serve as examples
-* **`infra/`**: reusable infrastructure-as-code modules, configuration snippets,
+- **`infra/`**: reusable infrastructure-as-code modules, configuration snippets,
   or templates (eg., terraform, terragrunt)
-* **`libs/`**: general-purpose code libraries and modules
-* **`scripts/`**: various utility scripts for development, deployment, or
+- **`libs/`**: general-purpose code libraries and modules
+- **`scripts/`**: various utility scripts for development, deployment, or
   maintenance tasks
 
 ## Getting started
@@ -35,12 +35,14 @@ primarily found under the `libs/` directory.
 | Package                                        | Description                                               |
 | ---------------------------------------------- | --------------------------------------------------------- |
 | [health-checks](libs/javascript/health-checks) | Simple server-side health checks in a NodeJS application. |
+| [invariant](libs/javascript/invariant)         | An invariant function.                                    |
 
 ## Licenses
 
 Unless specified differently within a specific directory or package, all content
 within this repository is licensed under the [MIT license](LICENSE).
 
-| Package                                        | License                                                   |
-| ---------------------------------------------- | --------------------------------------------------------- |
-| [health-checks](libs/javascript/health-checks) | [MIT](libs/javascript/health-checks/LICENSE.md)           |
+| Package                                        | License                                         |
+| ---------------------------------------------- | ----------------------------------------------- |
+| [health-checks](libs/javascript/health-checks) | [MIT](libs/javascript/health-checks/LICENSE.md) |
+| [invariant](libs/javascript/invariant)         | [MIT](libs/javascript/invariant/LICENSE.md)     |
