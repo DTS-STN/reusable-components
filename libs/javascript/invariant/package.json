@@ -39,7 +39,9 @@
     }
   },
   "files": [
-    "dist"
+    "./dist/",
+    "./LICENSE.md",
+    "./README.md"
   ],
   "sideEffects": false,
   "scripts": {
