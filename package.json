@@ -1,0 +1,16 @@
+{
+  "name": "@dts-stn/reusable-components",
+  "private": true,
+  "workspaces": [
+    "libs/javascript/health-checks",
+    "libs/javascript/invariant"
+  ],
+  "scripts": {
+    "changeset": "changeset",
+    "changeset:version": "changeset version"
+  },
+  "devDependencies": {
+    "@changesets/changelog-git": "^0.2.1",
+    "@changesets/cli": "^2.29.4"
+  }
+}
