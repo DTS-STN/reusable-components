@@ -42,6 +42,15 @@ resource "azurerm_subnet" "snet_esdc_hub_peered_gateway" {
   resource_group_name  = var.networking_rg_name
   virtual_network_name = azurerm_virtual_network.esdc_hub_peered_vnet.name
   address_prefixes     = [var.appgw_vnet_address_space]
+  delegation {
+    name = "Microsoft.Network/applicationGateways"
+    service_delegation {
+      actions = [
+        "Microsoft.Network/virtualNetworks/subnets/join/action",
+      ]
+      name = "Microsoft.Network/applicationGateways"
+    }
+  }
 }
 
 resource "azurerm_subnet_route_table_association" "rt_association_esdc_hub" {

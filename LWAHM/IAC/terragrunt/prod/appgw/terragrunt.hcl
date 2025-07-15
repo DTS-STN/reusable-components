@@ -30,8 +30,8 @@ inputs  = {
     agw_rg_name = dependency.resourceGroups.outputs.agw_rg_name
     sku_name = "Standard_v2"
     sku_tier = "Standard_v2"
+    zones = ["1", "2", "3"]
     application_gateway_subnet_id = dependency.network.outputs.application_gateway_subnet_id
-    kv_id = dependency.storage.outputs.kv_id
     law_id = dependency.logAnalytics.outputs.law_id
     backend_address_pools = [
       {

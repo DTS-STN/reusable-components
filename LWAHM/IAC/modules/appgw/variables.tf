@@ -23,9 +23,6 @@ variable "client_secret" {
 variable "networking_rg_name" {
   type    = string
 }
-variable "app_service_sku" {
-  type    = string
-}
 variable "kv_id" {
   type = string
 }
@@ -110,6 +107,9 @@ variable "wildcard_ssl_certificate_password" {
 variable "law_id" {
   type = string
 }
-variable "platform"{
+variable "platform" {
   type = string
+}
+variable "zones" {
+  type = set(string)
 }
