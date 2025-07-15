@@ -12,7 +12,7 @@ resource "azurerm_application_gateway" "application_gw" {
   name                = "agw-${var.platform}-${var.environment}"
   resource_group_name = var.agw_rg_name
   location            = var.location
-
+  zones = var.zones
   sku {
     name     = var.sku_name
     tier     = var.sku_tier
