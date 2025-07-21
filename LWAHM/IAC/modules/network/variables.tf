@@ -33,3 +33,9 @@ variable "gateway_capacity" {
 variable "platform" {
     type = string
 }
+variable "lwhp_vnet_address_space" {
+    type = string
+}
+variable "approved_bastion_address_space" {
+    type = string
+}
