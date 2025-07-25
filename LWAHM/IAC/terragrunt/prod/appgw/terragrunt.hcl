@@ -20,6 +20,8 @@ dependency "nginx" {
 
 locals {
   terraform_home = "../../../modules/"
+  varfile = find_in_parent_folders("example.prod.json")
+  vardata = jsondecode(file(local.varfile))
 }
 
 terraform {
@@ -54,13 +56,13 @@ inputs  = {
     http_listeners = [
       {
         name                           = "http-listener-nginx"
-        host_name                      = "CHANGEME"
+        host_name                      = "nginx.${local.vardata.base_domain}"
         require_sni                    = false
         is_https                       = false
       }
       {
         name                           = "https-listener-nginx"
-        host_name                      = "CHANGEME"
+        host_name                      = "nginx.${local.vardata.base_domain}"
         require_sni                    = false
         is_https                       = true
       },
