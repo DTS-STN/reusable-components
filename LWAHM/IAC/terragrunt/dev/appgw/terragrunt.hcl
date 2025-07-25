@@ -24,6 +24,8 @@ locals {
 
 terraform {
   source = "${local.terraform_home}/appgw"
+  varfile = find_in_parent_folders("example.dev.json")
+  vardata = jsondecode(file(local.varfile))
 }
 
 inputs  = {
@@ -54,13 +56,13 @@ inputs  = {
     http_listeners = [
       {
         name                           = "http-listener-nginx"
-        host_name                      = "CHANGEME"
+        host_name                      = "nginx.${local.vardata.base_domain}"
         require_sni                    = false
         is_https                       = false
       }
       {
         name                           = "https-listener-nginx"
-        host_name                      = "CHANGEME"
+        host_name                      = "nginx.${local.vardata.base_domain}"
         require_sni                    = false
         is_https                       = true
       },
