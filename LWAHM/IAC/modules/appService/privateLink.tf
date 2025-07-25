@@ -1,5 +1,5 @@
 resource "azurerm_private_endpoint" "appservice_pep" {
-  name                = "pep-${var.application_name}-${var.environment}"
+  name                = "pep-${var.platform}-${var.application_name}-${var.environment}"
   location            = var.location
   resource_group_name = azurerm_resource_group.appservice_rg.name
   subnet_id           = var.snet_peps_id
