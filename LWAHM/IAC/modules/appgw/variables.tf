@@ -4,6 +4,7 @@ variable "environment" {
 }
 variable "location" {
   type    = string
+  default = "Canada Central"
 }
 variable "base_domain" {
   type    = string
@@ -23,9 +24,6 @@ variable "client_secret" {
 variable "networking_rg_name" {
   type    = string
 }
-variable "kv_id" {
-  type = string
-}
 variable "appgw_log_retention_days" {
   type    = string
   default = 30
@@ -43,9 +41,6 @@ variable "application_gateway_subnet_id" {
   type = string
 }
 variable "appgw_private_ip" {
-  type = string
-}
-variable "environment_domain_name" {
   type = string
 }
 variable "backend_address_pools" {
@@ -112,4 +107,7 @@ variable "platform" {
 }
 variable "zones" {
   type = set(string)
+}
+variable "agw_policy_name" {
+  type = string
 }

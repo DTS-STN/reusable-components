@@ -20,10 +20,28 @@ variable "client_secret" {
 variable "next_hop_ip" {
   type = string
 }
+variable "networking_rg" {
+    type = string
+}
+variable "networking_id" {
+    type = string
+}
 variable "networking_rg_name" {
     type = string
 }
 variable "appgw_vnet_address_space" {
+    type = string
+}
+variable "lwhp_vnet_address_space" {
+    type = string
+}
+variable "app_service_subnet_cidr"{
+    type = string
+}
+variable "build_agents_subnet_cidr" {
+    type = string
+}
+variable "private_endpoints_subnet_cidr" {
     type = string
 }
 variable "gateway_capacity" {
@@ -31,20 +49,5 @@ variable "gateway_capacity" {
     default = 1
 }
 variable "platform" {
-    type = string
-}
-variable "lwhp_vnet_address_space" {
-    type = string
-}
-variable "approved_bastion_address_space" {
-    type = string
-}
-variable "app_service_subnet_cidr" {
-    type = string
-}
-variable "build_agents_subnet_cidr" {
-    type = string
-}
-variable "private_endpoints_subnet_cidr" {
     type = string
 }

@@ -2,22 +2,23 @@ resource "azurerm_linux_virtual_machine_scale_set" "build_agents_vmss" {
   name                = "build-agents-vmss-${var.platform}-${var.environment}"
   resource_group_name = var.build_agents_rg_name
   location            = var.location
-  sku                 = "Standard_DS1_v2"
+  sku                 = var.sku 
   instances           = 1
   admin_username      = "adminuser"
+  admin_password = var.build_agents_admin_pass
+  disable_password_authentication = false
   single_placement_group = false
   overprovision = false
   upgrade_mode = "Manual"
   custom_data = base64encode(file("cloud-init.txt")
   )
-  admin_password = var.build_agents_admin_pass
-  disable_password_authentication = false
+  
   identity {
     type = "SystemAssigned"
   }
 
   source_image_reference {
-    publisher = "Canonical"
+    publisher = "canonical"
     offer     = "ubuntu-24_04-lts"
     sku       = "server"
     version   = "latest"
@@ -26,10 +27,6 @@ resource "azurerm_linux_virtual_machine_scale_set" "build_agents_vmss" {
   os_disk {
     storage_account_type = "Standard_LRS"
     caching              = "ReadOnly"
-    diff_disk_settings {
-    option = "Local"
-  }
-
   }
   network_interface {
     name    = "nic-build-agents-${var.platform}-${var.environment}"

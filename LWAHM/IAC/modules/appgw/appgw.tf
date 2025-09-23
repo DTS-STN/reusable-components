@@ -23,6 +23,13 @@ resource "azurerm_application_gateway" "application_gw" {
     data     = var.wildcard_ssl_certificate
     password = var.wildcard_ssl_certificate_password
   }
+  ssl_profile {
+    name = "SSlProfile"
+    ssl_policy {
+      policy_type = "Predefined"
+      policy_name = var.agw_policy_name
+    }
+  }
   gateway_ip_configuration {
     name      = "gateway-ip-config"
     subnet_id = var.application_gateway_subnet_id
