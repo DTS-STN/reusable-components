@@ -22,4 +22,5 @@ inputs  = {
   networking_rg_name = dependency.resourceGroups.outputs.networking_rg_name
   build_agents_rg_name = dependency.resourceGroups.outputs.build_agents_rg_name
   snet_build_agents_id = dependency.network.outputs.snet_build_agents_id
+  sku = "changeme"
 }
