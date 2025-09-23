@@ -1,5 +1,5 @@
 **/terragrunt/**/*.json
-!example.*.json
+!example-*.json
 **/terragrunt/**/*.terragrunt-cache
 **/terragrunt/**/*.terraform
 **/.terrform
