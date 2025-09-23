@@ -16,3 +16,6 @@ output "snet_build_agents_id" {
 output "esdc_hub_peered_vnet_id" {
   value = azurerm_virtual_network.esdc_hub_peered_vnet.id
 }
+output "platform_vnet_name" {
+  value = azurerm_virtual_network.vnet.name
+}

@@ -1,5 +1,5 @@
 resource "azurerm_private_dns_zone" "privatelink_dns" {
-  name                = "${var.platform}-${var.environment}-privatelink.azurewebsites.net"
+  name                = "privatelink.azurewebsites.net"
   resource_group_name = var.private_dns_rg
 }
 

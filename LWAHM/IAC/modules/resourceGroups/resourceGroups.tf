@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "build_agents_rg"{
   name = "rg-${var.platform}-build-agents-${var.environment}"
   location = var.location
 }
-resource "azurerm_resource_group" "logs_rg" {
+resource "azurerm_resource_group" "log_rg" {
   name = "rg-${var.platform}-logs-${var.environment}"
   location = var.location
 }

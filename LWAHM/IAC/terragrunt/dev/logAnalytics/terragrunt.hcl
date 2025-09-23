@@ -15,6 +15,6 @@ terraform {
 }
 
 inputs  = {
-    logs_rg_name = dependency.resourceGroups.outputs.logs_rg_name
+    log_rg_name = dependency.resourceGroups.outputs.log_rg_name
     retention_days = 30
 }

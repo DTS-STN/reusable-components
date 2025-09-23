@@ -17,7 +17,7 @@ variable "client_id" {
 variable "client_secret" {
   type = string
 }
-variable "logs_rg_name" {
+variable "log_rg_name" {
   type = string
 }
 variable "retention_days" {

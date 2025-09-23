@@ -26,12 +26,6 @@ variable "application_name" {
 variable "app_service_sku" {
   type = string
 }
-variable "kv_uri" {
-  type = string
-}
-variable "kv_id" {
-  type = string
-}
 variable "private_dns_rg" {
   type = string
 }
@@ -42,6 +36,9 @@ variable "privatelink_dns_name" {
   type = string
 }
 variable "privatelink_dns_id" {
+  type = string
+}
+variable "platform_vnet_name" {
   type = string
 }
 variable "snet_peps_id" {
@@ -58,8 +55,9 @@ variable "image_name" {
 }
 variable "image_tag" {
   type = string
+  default = "latest"
 }
-variable "int_image_tag" {
+variable "staging_image_tag" {
   type = string
 }
 variable "acr_id" {

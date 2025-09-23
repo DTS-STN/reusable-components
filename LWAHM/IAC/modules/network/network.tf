@@ -9,7 +9,7 @@ resource "azurerm_virtual_network" "vnet" {
   name                = "vnet-${var.platform}-${var.environment}"
   resource_group_name = var.networking_rg_name
   location            = var.location
-  address_space       = ["11.0.0.0/24", "11.0.1.0/24"]
+  address_space       = [var.lwhp_vnet_address_space]
 }
 
 resource "azurerm_virtual_network_peering" "peer_hub_to_platform" {
@@ -26,6 +26,7 @@ resource "azurerm_virtual_network_peering" "peer_platform_to_hub" {
 }
 
 resource "azurerm_route_table" "route_table_perimeter_firewall" {
+  bgp_route_propagation_enabled = false
   name                = "rt-${var.platform}-${var.environment}"
   resource_group_name = var.networking_rg_name
   location            = var.location
@@ -56,4 +57,9 @@ resource "azurerm_subnet" "snet_esdc_hub_peered_gateway" {
 resource "azurerm_subnet_route_table_association" "rt_association_esdc_hub" {
   subnet_id      = azurerm_subnet.snet_esdc_hub_peered_gateway.id
   route_table_id = azurerm_route_table.route_table_perimeter_firewall.id
+}
+
+resource "azurerm_subnet_network_security_group_association" "snet_nsg_association_esdc_hub" {
+  subnet_id                 = azurerm_subnet.snet_esdc_hub_peered_gateway.id
+  network_security_group_id = azurerm_network_security_group.nsg.id
 }

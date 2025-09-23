@@ -24,6 +24,8 @@ locals {
 
 terraform {
   source = "${local.terraform_home}/appgw"
+  varfile = find_in_parent_folders("example.dev.json")
+  vardata = jsondecode(file(local.varfile))
 }
 
 inputs  = {
@@ -31,6 +33,7 @@ inputs  = {
     sku_name = "Standard_v2"
     sku_tier = "Standard_v2"
     zones = ["1", "2"]
+    agw_policy_name = "AppGwSslPolicy20220101S"
     application_gateway_subnet_id = dependency.network.outputs.application_gateway_subnet_id
     law_id = dependency.logAnalytics.outputs.law_id
     backend_address_pools = [
@@ -53,14 +56,8 @@ inputs  = {
     ]
     http_listeners = [
       {
-        name                           = "http-listener-nginx"
-        host_name                      = "CHANGEME"
-        require_sni                    = false
-        is_https                       = false
-      }
-      {
         name                           = "https-listener-nginx"
-        host_name                      = "CHANGEME"
+        host_name                      = "nginx.${local.vardata.base_domain}"
         require_sni                    = false
         is_https                       = true
       },

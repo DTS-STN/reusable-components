@@ -1,10 +1,10 @@
 locals {
-  varfile = "lwahm-dev.json"
+  varfile = "example-dev.json"
   vardata = jsondecode(file(local.varfile))
 }
 
 inputs =  merge(jsondecode(
-    file("${find_in_parent_folders("lwahm-dev.json", local.varfile)}"),
+    file("${find_in_parent_folders("example-dev.json", local.varfile)}"),
   ))
 
 generate "provider" {

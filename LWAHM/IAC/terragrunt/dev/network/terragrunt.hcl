@@ -15,6 +15,5 @@ terraform {
 }
 
 inputs = {
-    networking_rg_name = dependency.resourceGroups.outputs.networking_rg_name
-    appgw_vnet_address_space = "10.0.0.0/16"
+  networking_rg_name = dependency.resourceGroups.outputs.networking_rg_name
 }

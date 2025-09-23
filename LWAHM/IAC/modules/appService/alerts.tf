@@ -17,7 +17,6 @@ resource "azurerm_monitor_action_group" "ag_appservice" {
     }
   }
 }
-# LETS
 resource "azurerm_monitor_metric_alert" "alert_rule_latency" {
   name                = "latency-alert"
   resource_group_name = azurerm_resource_group.appservice_rg.name

@@ -31,3 +31,6 @@ variable "build_agents_admin_pass" {
 variable "platform" {
     type = string
 }
+variable "sku" {
+    type = string
+}
